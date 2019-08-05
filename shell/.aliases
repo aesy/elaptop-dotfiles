@@ -1,0 +1,195 @@
+#!/usr/bin/env bash
+
+alias nvidia-settings="optirun -b none nvidia-settings -c :8"
+
+# Generic applications
+alias music=""
+alias email=""
+alias calender=""
+alias video=""
+alias calculator="speedcrunch"
+alias colorfetch="colorpicker"
+alias colorpicker="coulr"
+weather() { curl wttr.in/$1 ;}
+
+# Audio
+alias mixer="pulsemixer"
+alias mute="pamixer -m"
+alias unmute="pamixer -u"
+alias vu="pamixer --allow-boost -i 5"
+alias vd="pamixer --allow-boost -d 5"
+alias pause="mpc toggle"
+alias next="mpc next"
+alias prev="mpc prev"
+
+# Utilities
+alias ethspeed="speedometer -r enp0s25"
+alias wifispeed="speedometer -r wlp3s0"
+alias week="date +%V"
+alias timer="echo 'Timer started. Stop with Ctrl-D.' && date && time cat && date"
+alias now="date '+DATE: %y/%m/%d%nTIME: %H:%M:%S'"
+alias epoch='date +"%s"'
+# alias battery="echo $(cat /sys/class/power_supply/BAT0/capacity)%"
+alias ping="prettyping"
+alias diff="colordiff"
+alias myip="curl http://ipecho.net/plain; echo"
+alias info="neofetch"
+alias used="du -sh"
+alias space="df -h"
+alias disk="lsblk -ap"
+alias uptime="uptime -p"
+alias mem="free -h"
+alias fonts="fc-list | cut -d ' ' -f2 | sort -u"
+
+# Package manager
+alias pacman="sudo pacman --color=always"
+alias p="yay"
+#alias ps="yay -Ss" # search
+alias pq="yay -Qi" # query
+alias pqi="yay -Qet && yay -Qm | sort -u" # query installed
+alias pqo="yay -Qdt" # query orphans
+alias pi="yay -S" # install
+alias piy="yay -S --noconfirm" # install no questions
+alias pr="yay -Rns" # remove
+alias pu="yay -Syau" # update
+alias puy="yay -Syau --noconfirm" # update no questions
+alias pcc="yay -Sc" # clear cache
+alias pco="yay -Rns $(yay -Qdtq)" # clear orphans
+
+# OS
+cdls() { cd "$@" && ls ;}
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ~="cd ~"
+alias /="cd /"
+alias -- -="cd -"
+alias help="man"
+alias here="pwd"
+alias do="sudo"
+alias please="sudo $$(history -p \!\!)"
+alias ls=exa --git --group-directories-first
+alias lsa="exa -ha --git --group-directories-first"
+alias ll="exa -hl -s Extension --git --group-directories-first"
+alias lla="exa -hla -s Extension --git --group-directories-first"
+alias lg="exa -hla -s Extension | grep"
+alias md="mkdir -pv"
+mdcd() { mkdir -pv "$@" && cd "$@" ;}
+alias ln='ln -i -n'
+alias mf="touch"
+alias rd="rmdir"
+alias k="kill"
+alias ka="killall"
+alias x="exit"
+alias c="clear"
+alias d="man"
+alias e="ranger"
+alias f="find . -name"
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+alias h="history | grep"
+alias p="ps aux | grep"
+alias rm="rm -Iv"
+alias rmf="rm -Ivrf"
+alias mv="mv -v"
+alias cp="cp -vr"
+alias tree="tree -CAFa -I 'CVS|*.*.package|.svn|.git|.hg|node_modules|bower_components' --dirsfirst"
+alias grep="grep --color=auto"
+alias nano="nano -wl"
+alias which="type -a"
+alias tree=exa --tree
+#alias ccopy='xclip -selection clipboard'
+#alias cpaste='xclip -selection clipboard -o'
+
+# REPL
+alias js="node"
+alias jv="jshell"
+alias kt="kotlinc"
+alias py="python3"
+alias py2="python2"
+alias py3="python3"
+
+# Java
+alias m="mvn"
+alias mq="mvn -DskipTests -Dcheckstyle.skip"
+alias mc="mvn compile"
+alias mcc="mvn clean compile"
+alias mi="mvn install"
+alias mpq="mvn install -DskipTests -Dcheckstyle.skip"
+alias mci="mvn clean install"
+alias mpq="mvn clean install -DskipTests -Dcheckstyle.skip"
+alias mp="mvn package"
+alias mpq="mvn package -DskipTests -Dcheckstyle.skip"
+alias mcp="mvn clean package"
+alias mcpq="mvn clean package -DskipTests -Dcheckstyle.skip"
+alias mt="mvn test"
+alias mct="mvn clean test"
+
+# JavaScript
+alias n="npm"
+alias ni="npm install"
+alias np="npm prune"
+
+# Git
+alias g="git"
+
+gbdm() { # Branch delete merged
+    git branch -d `git branch --merged | grep -v '^*' | grep -v 'master' | tr -d '\n'`
+    git branch -d `git branch --merged | grep -v '^*' | grep -v 'development' | tr -d '\n'`
+}
+
+gbnh() { # Branch nuke hard
+    git branch -D $1
+    git push origin :$1
+}
+
+alias gl="git log --pretty=format:'%C(yellow)%h %C(blue)%>(12,trunc)%ad %C(green)%aN %C(reset)-%C(red)%d %C(reset)%s' --date=relative"
+alias gh="hub browser"
+alias ghc="hub clone"
+alias ghf="hub fork"
+alias ghi="hub issue"
+alias ghr="hub release"
+alias gfi="git flow init"
+alias gff="git flow feature"
+alias gffs="git flow feature start"
+alias gfff="git flow feature finish"
+alias gffd="git flow feature delete"
+alias gffp="git flow feature publish"
+alias gfr="git flow release"
+alias gfrs="git flow release start"
+alias gfrf="git flow release finish"
+alias gfrd="git flow release delete"
+alias gfrp="git flow release publish"
+alias gfb="git flow bugfix"
+alias gfbs="git flow bugfix start"
+alias gfbf="git flow bugfix finish"
+alias gfbd="git flow bugfix delete"
+alias gfbp="git flow bugfix publish"
+alias gfh="git flow hotfix"
+alias gfhs="git flow hotfix start"
+alias gfhf="git flow hotfix finish"
+alias gfhd="git flow hotfix delete"
+alias gfhp="git flow hotfix publish"
+alias gfs="git flow support"
+alias gfss="git flow support start"
+alias gfsf="git flow support finish"
+alias gfsd="git flow support delete"
+alias gfsp="git flow support publish"
+
+# Docker
+alias d="docker"
+alias ds="docker stop"
+dsa() { docker stop $(docker ps -a -q); }
+alias dr="docker rm"
+dra() { docker rm $(docker ps -a -q); }
+alias dri="docker rmi"
+dria() { docker rmi $(docker images -q); }
+db() { docker build -t=$1 -f=${2:-Dockerfile} ${3:-.}; }
+de() { docker exec -it $1 /bin/bash; }
+alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias dc="docker-compose"
+alias dcu="docker-compose up"
+alias dcd="docker-compose down"
+
+# SSH
+alias eserver="ssh easy@wertwein.com"

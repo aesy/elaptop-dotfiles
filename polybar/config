@@ -1,0 +1,212 @@
+[bar/main]
+
+width = 100%
+height = 20
+offset-y = 0
+offset-x = 0
+
+border-top-size = 10
+border-bottom-size = 10
+border-right-size = 10
+border-left-size = 10
+
+bottom = false
+monitor = eDP1
+wm-restack = bspwm
+override-redirect = true
+enable-ipc = true
+
+font-0 = Roboto:size=11;3
+; yay -Ss ttf-material-design-icons-webfont
+; https://cdn.materialdesignicons.com/3.8.95/
+font-1 = "Material Design Icons:pixelsize=14;3"
+
+background = 0
+foreground = #c5a9f9
+border-color = 0
+
+fixed-center = true
+padding-left = 2
+padding-right = 2
+module-margin = 1.5
+
+modules-left = pulseaudio monitorbacklight keyboardbacklight battery cpu memory temperature
+modules-center = xwindow
+modules-right = wlan network date time powermenu
+
+tray-position = none
+tray-detached = true
+
+
+[module/bspwm]
+
+type = internal/bspwm
+pin-workspaces = true
+strip-wsnumbers = true
+enable-scroll = false
+
+label-unfocused-foreground = #afafaf
+label-focused-foreground = #c5a9f9
+label-urgent-foreground = #ff0000
+
+
+[module/time]
+
+type = internal/date
+interval = 1.0
+date =   %H:%M
+
+
+[module/date]
+
+type = internal/date
+date =  %e %B - %A
+label = %date%
+
+
+[module/battery]
+
+type = internal/battery
+battery = BAT0
+poll-interval = 5
+full-at = 95
+
+label-discharging = %percentage%%
+label-charging = %percentage%%
+label-full = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+format-charging =  <label-charging>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+
+[module/pulseaudio]
+
+type = internal/pulseaudio
+format-volume = %{A3:alacritty --command pulsemixer:} <ramp-volume> <label-volume> %{A}
+label-muted = ﹨ 0%
+enable-scroll = true
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+
+[module/mpd]
+
+type = internal/mpd
+label-offline = mpd is offline
+format-online = <icon-prev> <toggle> <icon-next> <label-song>
+format-offline = <label-offline>
+host = 127.0.0.1
+port = 6600
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+bar-progress-width = 10
+bar-progress-indicator = |
+bar-progress-fill = ─
+bar-progress-empty = ─
+
+
+[module/monitorbacklight]
+
+type = internal/xbacklight
+format = <ramp> <label>
+label = %percentage%%
+enable-scroll = true
+interval = 1
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+
+
+[module/wlan]
+
+type = internal/network
+interface = wlp3s0
+interval = 5
+
+format-connected = %{A3:alacritty --command nmtui:} <ramp-signal> <label-connected> %{A}
+format-disconnected = %{A3:alacritty --command nmtui:} <label-disconnected> %{A}
+format-packetloss = %{A3:alacritty --command nmtui:} 浪 %{A}
+
+label-connected = %essid%
+label-disconnected = Not Connected
+
+ramp-signal-0 = 冷
+ramp-signal-1 = 爛
+ramp-signal-2 = 嵐
+ramp-signal-3 = 襤
+ramp-signal-4 = 蠟
+
+
+[module/cpu]
+
+type = internal/cpu
+format = %{A3:alacritty --command gtop:} <label> %{A}
+label =  %percentage%%
+
+
+[module/memory]
+
+type = internal/memory
+format = %{A3:alacritty --command gtop:} <label> %{A}
+label =  %gb_used%
+
+
+[module/network]
+
+type = internal/network
+interface = wlp3s0
+label-connected =  %downspeed% |  %upspeed%
+
+[module/xwindow]
+
+type = internal/xwindow
+
+[module/temperature]
+
+type = internal/temperature
+
+
+[module/powermenu]
+
+type = custom/menu
+format-spacing = 1
+
+label-open = 
+label-close = 
+label-separator = |
+
+menu-0-0 = reboot
+menu-0-0-exec = systemctl reboot
+menu-0-1 = poweroff
+menu-0-1-exec = systemctl poweroff
+
+
+[module/keyboardbacklight]
+
+type = custom/script
+format = 梁 <label>
+label = %output%%
+interval = 1
+
+exec = light -Gs "sysfs/leds/asus::kbd_backlight" | xargs printf "%.0f\n" $p
+scroll-up = light -Ars "sysfs/leds/asus::kbd_backlight" 1
+scroll-down = light -Urs "sysfs/leds/asus::kbd_backlight" 1

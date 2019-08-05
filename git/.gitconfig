@@ -1,0 +1,92 @@
+[core]
+    autocrlf = input
+    editor = $EDITOR
+    pager = $PAGER
+[color]
+    branch = true
+    diff = true
+    status = true
+    ui = true
+    interactive = true
+[commit]
+    verbose = true
+[status]
+    showUntrackedFiles = no
+    submodulesummary = false
+[log]
+    date = local
+[pull]
+    rebase = preserve
+    ff = only
+[push]
+    default = current
+[fetch]
+    prune = true
+[merge]
+    ff = false
+[rebase]
+    autostash = true
+[color "branch"]
+    current = magenta reverse
+    local = green bold
+    remote = red bold
+[color "status"]
+    added = green
+    changed = cyan
+    untracked = red
+[color "diff"]
+    meta = black bold
+    frag = magenta bold
+    old = red blink
+    plain = black dim
+    new = green ul
+    whitespaces = red reverse
+[gitflow "branch"]
+    master = master
+    develop = development
+[gitflow "prefix"]
+    feature = feature/
+    release = release/
+    hotfix = hotfix/
+    bugfix = bugfix/
+    support = support/
+    versiontag = v
+[user]
+    name = Isak W
+    email = isak.wertwein@gmail.com
+[alias]
+    st = status -s
+    stl = status
+    stb = status -sb
+    cl = clone
+    cm = commit
+    cma = commit --amend --no-edit
+    co = checkout
+    cob = checkout -b
+    cod = checkout development
+    com = checkout master
+    b = branch -v
+    br = branch -rv
+    bd = branch -d
+    bdh = branch -D
+    d = diff --word-diff
+    dc = diff --cached
+    fe = fetch
+    fa = fetch --all
+    pl = pull
+    plr = pull --rebase
+    ps = push -u origin HEAD
+    psf = push --force-with-lease
+    r = remote -v
+    m = merge
+    mf = merge --ff
+    mnf = merge --no-ff
+    cp = cherry-pick
+    cpa = cherry-pick --abort
+    cpc = cherry-pick --continue
+    sts = stash save
+    stl = stash list
+    sta = stash apply
+    stp = stash pop
+    stc = stash clear
+    standup = log --since yesterday --oneline --author 'Isak W'

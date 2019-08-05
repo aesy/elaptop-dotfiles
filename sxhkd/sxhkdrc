@@ -1,0 +1,125 @@
+# terminal
+super + t 
+	alacritty
+
+# explorer
+super + e
+	alacritty -e ranger
+
+# browser
+super + b
+	firefox-developer-edition
+
+# calculator
+super + c
+	speedcrunch
+
+# IDE
+super + i
+	intellij-idea-ultimate-edition
+
+# application launcher
+super + @space 
+	rofi -show drun -theme ~/.config/rofi/easy
+
+# window launcher
+super + alt + @space
+	rofi -show window -theme ~/.config/rofi/easy
+
+{XF86AudioLowerVolume, XF86AudioRaiseVolume}
+	amixer -D pulse set Master 5%{-,+} unmute
+
+XF86AudioMute
+	amixer -D pulse set Master 1+ toggle
+
+{XF86MonBrightnessUp,XF86MonBrightnessDown}
+	light -{A,U} 5
+
+{XF86KbdBrightnessUp,XF86KbdBrightnessDown}
+	sudo asus-kbd-backlight {up,down}
+
+{XF86AudioPlay,XF86AudioStop,XF86AudioNext,XF86AudioPrev}
+	playerctl {play-pause,stop,next,previous}
+
+function + {Up,Down,Right,Left}
+	playerctl {play-pause,stop,next,previous}
+
+# make sxhkd reload its configuration files:
+super + r 
+	pkill -USR1 -x sxhkd
+
+# quit bspwm normally
+super + alt + Escape 
+	bspc quit
+
+# close and kill
+super + {_,shift + }Escape 
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + f
+	bspc desktop -l next
+
+# toggle floating
+super + ctrl + @space  
+	bspc node -t '~{floating}'
+
+# toggle taskbar
+super + ctrl + p
+	polybar-msg cmd toggle
+
+# set the node flags
+super + ctrl + {m,l,s,p} 
+	bspc node -g {marked,locked,sticky,private}
+
+# focus the node in the given direction
+super + {Left,Down,Up,Right} 
+	bspc node -f {west,south,north,east}
+
+# swap the node with the node in the given direction
+super + shift + {Left,Down,Up,Right}
+	bspc node -s {west,south,north,east}
+
+# focus the next/previous node in the current desktop
+super + {comma,period} 
+	bspc node -f {prev,next}.local
+
+focus the next/previous desktop in the current monitor
+super + shift + {comma,period} 
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {_,alt} + Tab
+	bspc {node,desktop} -f last
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0} 
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# preselect the direction
+super + alt + {Left,Down,Up,Right} 
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + shift + {1-9} 
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + shift + space 
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space 
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# expand a window by moving one of its side outward
+super + ctrl + {Left,Down,Up,Right} 
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + ctrl + alt + {Left,Down,Up,Right} 
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + alt + {Left,Down,Up,Right} 
+	bspc node -v {-20 0,0 20,0 -20,20 0}

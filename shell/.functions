@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+
+open() {
+    xdg-open "$1" &> /dev/null & disown
+}
+
+run() {
+    "$@" < /dev/null &> /dev/null & disown
+}
+
+#shutdown() {
+#   echo "Are you sure you want to shut down $(hostname)?";
+#   read input;
+#   case "$input" in
+#      y* | Y*) sudo shutdown -h now ;;
+#      *) echo "Cancelling request to shut down $(hostname)." ;;
+#   esac
+#}
+#
+#reboot() {
+#   echo "Are you sure you want to reboot $(hostname)?";
+#   read input;
+#   case "$input" in
+#      y* | Y*) sudo shutdown -r now ;;
+#      *) echo "Cancelling request to reboot $(hostname)." ;;
+#   esac
+#}
+
+extract() {
+  if [ -f $1 ] ; then
+      case $1 in
+          *.tar.xz)    tar xvJf $1    ;;
+          *.tar.bz2)   tar xvjf $1    ;;
+          *.tar.gz)    tar xvzf $1    ;;
+          *.bz2)       bunzip2 $1     ;;
+          *.rar)       unrar e $1     ;;
+          *.gz)        gunzip $1      ;;
+          *.tar)       tar xvf $1     ;;
+          *.tbz2)      tar xvjf $1    ;;
+          *.tgz)       tar xvzf $1    ;;
+          *.apk)       unzip $1       ;;
+          *.epub)      unzip $1       ;;
+          *.xpi)       unzip $1       ;;
+          *.zip)       unzip $1       ;;
+          *.war)       unzip $1       ;;
+          *.jar)       unzip $1       ;;
+          *.Z)         uncompress $1  ;;
+          *.7z)        p7zip e $1     ;;
+          *)           echo "don't know how to extract '$1'..." ;;
+      esac
+  else
+      echo "'$1' is not a valid file!"
+  fi
+}
+
+compress() {
+    if [ -n "$1" ] ; then
+        FILE=$1
+        case $FILE in
+            *.tar) shift && tar cf $FILE $*      ;;
+            *.tar.bz2) shift && tar cjf $FILE $* ;;
+            *.tar.gz) shift && tar czf $FILE $*  ;;
+            *.tgz) shift && tar czf $FILE $*     ;;
+            *.zip) shift && zip $FILE $*         ;;
+            *.rar) shift && rar $FILE $*         ;;
+            *) echo "don't know how to compress '$1'..." ;;
+        esac
+    else
+        echo "'$1' is not a valid file!"
+    fi
+}
+
+whatsonport() {
+    lsof -i tcp:$1
+}
