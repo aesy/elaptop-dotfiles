@@ -1,7 +1,7 @@
 [core]
     autocrlf = input
-    editor = $EDITOR
-    pager = $PAGER
+    editor = nano
+    pager = less
 [color]
     branch = true
     diff = true
