@@ -4,6 +4,8 @@ xrandr --auto
 
 wmname LG3D # Java GUI render fix for tiled window managers
 
+xset s off -dpms # Prevent monitor sleep
+
 feh --bg-scale ~/Pictures/Wallpaper/lights-3840x2160-purple-bokeh-blurred-4k-9660.jpeg &
 polybar main &
 sxhkd -m -1 &
