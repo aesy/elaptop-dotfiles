@@ -44,6 +44,10 @@ XF86AudioMute
 function + {Up,Down,Right,Left}
 	playerctl {play-pause,stop,next,previous}
 
+# Take full screenshot
+Print
+    scrot $HOME/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_scrot.png
+
 # make sxhkd reload its configuration files:
 super + r 
 	pkill -USR1 -x sxhkd
