@@ -45,7 +45,7 @@ ln -snf "$PWD"/shell/.profile ~/.profile
 ln -snf "$PWD"/shell/.zshrc ~/.zshrc
 
 # x11
-ln -snf "$PWD"/shell/.xinitrc ~/.xinitrc
-ln -snf "$PWD"/shell/.Xresources ~/.Xresources
+ln -snf "$PWD"/x11/.xinitrc ~/.xinitrc
+ln -snf "$PWD"/x11/.Xresources ~/.Xresources
 
 echo "Done!"
