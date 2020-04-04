@@ -6,14 +6,14 @@ offset-y = 0
 offset-x = 0
 
 border-top-size = 10
-border-bottom-size = 10
 border-right-size = 10
 border-left-size = 10
+border-bottom-size = 2
 
 bottom = false
 monitor = eDP1
 wm-restack = bspwm
-override-redirect = true
+override-redirect = false
 enable-ipc = true
 
 font-0 = Roboto:size=11;3
@@ -32,7 +32,7 @@ module-margin = 1.5
 
 modules-left = pulseaudio monitorbacklight keyboardbacklight battery cpu memory temperature
 modules-center = xwindow
-modules-right = wlan network date time powermenu
+modules-right = wlan network date time
 
 tray-position = none
 tray-detached = true

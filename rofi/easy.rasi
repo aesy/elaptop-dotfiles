@@ -1,7 +1,7 @@
 configuration {
     modi: "drun,window,ssh";
     columns: 1;
-    lines: 5;
+    lines: 8;
     bw: 4;
     font: "Source Code Pro Regular 12";
     show-icons: true;
@@ -16,7 +16,7 @@ configuration {
     hide-scrollbar: true;
     sidebar-mode: false;
     matching: "fuzzy";
-    threads: 2;
+    threads: 1;
 
     kb-primary-paste: "Control+v";
     kb-secondary-paste: "Control+V";
@@ -88,7 +88,7 @@ configuration {
 
 #window {
     background-color: rgba ( 57, 57, 57, 95 % );
-    border:           2px ;
+    border:           3px ;
     padding:          4px ;
 }
 
@@ -203,4 +203,3 @@ configuration {
     margin:     0px 0.3em 0em 0em ;
     text-color: @normal-foreground;
 }
-
