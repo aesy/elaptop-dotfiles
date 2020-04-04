@@ -23,3 +23,6 @@ bspc config pointer_follows_focus       true
 bspc config pointer_follows_monitor     true
 bspc config window_gap                  8
 bspc config border_width                3
+
+# cover polybar when monocle
+bspc config top_monocle_padding         -32
