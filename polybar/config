@@ -75,9 +75,9 @@ label-discharging = %percentage%%
 label-charging = %percentage%%
 label-full = %percentage%%
 
-format-discharging = %{A3:alacritty --command powertop:} <ramp-capacity> <label-discharging> %{A}
-format-full = %{A3:alacritty --command powertop:} <ramp-capacity> <label-full> %{A}
-format-charging = %{A3:alacritty --command powertop:}  <label-charging> %{A}
+format-discharging = %{A3:alacritty --command sudo powertop:} <ramp-capacity> <label-discharging> %{A}
+format-full = %{A3:alacritty --command sudo powertop:} <ramp-capacity> <label-full> %{A}
+format-charging = %{A3:alacritty --command sudo powertop:}  <label-charging> %{A}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
