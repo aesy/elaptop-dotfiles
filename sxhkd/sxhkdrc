@@ -109,12 +109,8 @@ super + alt + {Left,Down,Up,Right}
 super + shift + {1-9} 
 	bspc node -o 0.{1-9}
 
-# cancel the preselection for the focused node
-super + shift + space 
-	bspc node -p cancel
-
 # cancel the preselection for the focused desktop
-super + ctrl + shift + space 
+~Escape
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 # expand a window by moving one of its side outward
