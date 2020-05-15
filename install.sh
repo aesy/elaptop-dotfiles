@@ -38,6 +38,10 @@ ln -snf "$PWD"/rofi/easy.rasi ~/.config/rofi/easy.rasi
 mkdir -p ~/.config/sxhkd
 ln -snf "$PWD"/sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
 
+# pulseaudio
+mkdir -p ~/.config/pulse
+ln -snf "$PWD"/pulseaudio/daemon.conf ~/.config/pulse/daemon.conf
+
 # shell
 ln -snf "$PWD"/shell/.aliases ~/.aliases
 ln -snf "$PWD"/shell/.functions ~/.functions
