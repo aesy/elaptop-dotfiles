@@ -9,7 +9,7 @@ xset s off -dpms # Prevent monitor sleep
 feh --bg-scale ~/Pictures/Wallpaper/lights-3840x2160-purple-bokeh-blurred-4k-9660.jpeg &
 polybar main &
 sxhkd -m -1 &
-compton &
+picom &
 dunst &
 udiskie -anT2 &
 firefox-developer-edition &

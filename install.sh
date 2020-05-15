@@ -15,8 +15,8 @@ ln -snf "$PWD"/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 mkdir -p ~/.config/bspwm
 ln -snf "$PWD"/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 
-# compton
-ln -snf "$PWD"/compton/compton.conf ~/.config/compton.conf
+# picom
+ln -snf "$PWD"/picom/picom.conf ~/.config/picom/picom.conf
 
 # dunst
 mkdir -p ~/.config/dunst
