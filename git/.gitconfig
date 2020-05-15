@@ -16,7 +16,7 @@
 [log]
     date = local
 [pull]
-    rebase = preserve
+    rebase = merges
     ff = only
 [push]
     default = current
