@@ -14,6 +14,10 @@ super + b
 super + c
 	speedcrunch
 
+# notication center
+super + a
+	kill -s USR1 $(pidof deadd-notification-center)
+
 # IDE
 super + i
 	intellij-idea-ultimate-edition
@@ -113,14 +117,9 @@ super + shift + {1-9}
 ~Escape
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-# expand a window by moving one of its side outward
-super + ctrl + {Left,Down,Up,Right} 
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-# contract a window by moving one of its side inward
-super + ctrl + alt + {Left,Down,Up,Right} 
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+super + ctrl + {Left,Down,Up,Right}
+	$HOME/.config/bspwm/bspwm_resize.sh {west,south,north,east}
 
 # move a floating window
-super + alt + {Left,Down,Up,Right} 
+super + shift + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}

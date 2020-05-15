@@ -11,6 +11,7 @@ polybar main &
 sxhkd -m -1 &
 picom &
 dunst &
+deadd-notificaiton-center &
 udiskie -anT2 &
 firefox-developer-edition &
 # alacritty &
