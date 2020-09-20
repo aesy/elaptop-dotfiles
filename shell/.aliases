@@ -3,14 +3,14 @@
 alias nvidia-settings="optirun -b none nvidia-settings -c :8"
 
 # Generic applications
-alias music=""
-alias email=""
-alias calender=""
-alias video=""
+# alias music=""
+# alias email=""
+# alias calender=""
+# alias video=""
 alias calculator="speedcrunch"
 alias colorfetch="colorpicker"
 alias colorpicker="coulr"
-weather() { curl wttr.in/$1 ;}
+# weather() { curl wttr.in/$1 ;}
 
 # Audio
 alias mixer="pulsemixer"
@@ -40,6 +40,7 @@ alias disk="lsblk -ap"
 alias uptime="uptime -p"
 alias mem="free -h"
 alias fonts="fc-list | cut -d ' ' -f2 | sort -u"
+alias ncdu="ncdu --color dark -rr -x"
 
 # Package manager
 alias pacman="sudo pacman --color=always"
@@ -54,27 +55,28 @@ alias pr="yay -Rns" # remove
 alias pu="yay -Syau" # update
 alias puy="yay -Syau --noconfirm" # update no questions
 alias pcc="yay -Sc" # clear cache
-alias pco="yay -Rns $(yay -Qdtq)" # clear orphans
+# alias pco="yay -Rns $(yay -Qdtq)" # clear orphans
 
 # OS
-cdls() { cd "$@" && ls ;}
-alias ..="cd .."
-alias ..2="cd ../.."
-alias ..3="cd ../../.."
-alias ~="cd ~"
-alias /="cd /"
-alias -- -="cd -"
+# cdls() { cd "$@" && ls ;}
+# alias ..="cd .."
+# alias ..2="cd ../.."
+# alias ..3="cd ../../.."
+# alias ~="cd ~"
+# alias /="cd /"
+# alias -- -="cd -"
 alias help="man"
 alias here="pwd"
 alias do="sudo"
-alias please="sudo $$(history -p \!\!)"
-alias ls=exa --git --group-directories-first
+# alias please="sudo $$(history -p \!\!)"
+alias cat="bat --style=plain"
+alias ls="exa --git --group-directories-first"
 alias lsa="exa -ha --git --group-directories-first"
 alias ll="exa -hl -s Extension --git --group-directories-first"
 alias lla="exa -hla -s Extension --git --group-directories-first"
 alias lg="exa -hla -s Extension | grep"
 alias md="mkdir -pv"
-mdcd() { mkdir -pv "$@" && cd "$@" ;}
+# mdcd() { mkdir -pv "$@" && cd "$@" ;}
 alias ln='ln -i -n'
 alias mf="touch"
 alias rd="rmdir"
@@ -85,8 +87,9 @@ alias c="clear"
 alias d="man"
 alias e="ranger"
 alias f="find . -name"
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+alias fdir='find . -type d -name'
+alias ffile='find . -type f -name'
+alias find="fd"
 alias h="history | grep"
 alias p="ps aux | grep"
 alias rm="rm -Iv"
@@ -94,10 +97,10 @@ alias rmf="rm -Ivrf"
 alias mv="mv -v"
 alias cp="cp -vr"
 alias tree="tree -CAFa -I 'CVS|*.*.package|.svn|.git|.hg|node_modules|bower_components' --dirsfirst"
-alias grep="grep --color=auto"
+alias grep="rg --color=auto"
 alias nano="nano -wl"
 alias which="type -a"
-alias tree=exa --tree
+alias tree="exa --tree"
 #alias ccopy='xclip -selection clipboard'
 #alias cpaste='xclip -selection clipboard -o'
 
@@ -133,15 +136,15 @@ alias np="npm prune"
 # Git
 alias g="git"
 
-gbdm() { # Branch delete merged
-    git branch -d `git branch --merged | grep -v '^*' | grep -v 'master' | tr -d '\n'`
-    git branch -d `git branch --merged | grep -v '^*' | grep -v 'development' | tr -d '\n'`
-}
+# gbdm() { # Branch delete merged
+#     git branch -d `git branch --merged | grep -v '^*' | grep -v 'master' | tr -d '\n'`
+#     git branch -d `git branch --merged | grep -v '^*' | grep -v 'development' | tr -d '\n'`
+# }
 
-gbnh() { # Branch nuke hard
-    git branch -D $1
-    git push origin :$1
-}
+# gbnh() { # Branch nuke hard
+#     git branch -D $1
+#     git push origin :$1
+# }
 
 alias gl="git log --pretty=format:'%C(yellow)%h %C(blue)%>(12,trunc)%ad %C(green)%aN %C(reset)-%C(red)%d %C(reset)%s' --date=relative"
 alias gh="hub browser"
@@ -179,13 +182,13 @@ alias gfsp="git flow support publish"
 # Docker
 alias d="docker"
 alias ds="docker stop"
-dsa() { docker stop $(docker ps -a -q); }
+# dsa() { docker stop $(docker ps -a -q); }
 alias dr="docker rm"
-dra() { docker rm $(docker ps -a -q); }
+# dra() { docker rm $(docker ps -a -q); }
 alias dri="docker rmi"
-dria() { docker rmi $(docker images -q); }
-db() { docker build -t=$1 -f=${2:-Dockerfile} ${3:-.}; }
-de() { docker exec -it $1 /bin/bash; }
+# dria() { docker rmi $(docker images -q); }
+# db() { docker build -t=$1 -f=${2:-Dockerfile} ${3:-.}; }
+# de() { docker exec -it $1 /bin/bash; }
 alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 alias dc="docker-compose"
 alias dcu="docker-compose up"

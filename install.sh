@@ -47,7 +47,11 @@ ln -snf "$PWD"/pulseaudio/daemon.conf ~/.config/pulse/daemon.conf
 ln -snf "$PWD"/shell/.aliases ~/.aliases
 ln -snf "$PWD"/shell/.functions ~/.functions
 ln -snf "$PWD"/shell/.profile ~/.profile
-ln -snf "$PWD"/shell/.zshrc ~/.zshrc
+ln -snf "$PWD"/shell/.bashrc ~/.bashrc
+ln -snf "$PWD"/shell/config.fish ~/.config/fish/config.fish
+
+# starship
+ln -snf "$PWD"/starship/starship.toml ~/.config/starship.toml
 
 # x11
 ln -snf "$PWD"/x11/.xinitrc ~/.xinitrc
