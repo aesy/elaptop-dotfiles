@@ -16,6 +16,7 @@ mkdir -p ~/.config/bspwm
 ln -snf "$PWD"/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 
 # picom
+mkdir -p ~/.config/picom
 ln -snf "$PWD"/picom/picom.conf ~/.config/picom/picom.conf
 
 # dunst
