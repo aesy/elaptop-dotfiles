@@ -16,7 +16,9 @@ configuration {
     hide-scrollbar: true;
     sidebar-mode: false;
     matching: "fuzzy";
-    threads: 1;
+    sorting-method: "fzf";
+    sort: true;
+    threads: 2;
 
     kb-primary-paste: "Control+v";
     kb-secondary-paste: "Control+V";
