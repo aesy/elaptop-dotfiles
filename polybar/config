@@ -17,9 +17,9 @@ override-redirect = false
 enable-ipc = true
 
 font-0 = Roboto:size=11;3
-; yay -Ss ttf-material-design-icons-webfont
+; yay -Ss ttf-material-design-icons-git
 ; https://cdn.materialdesignicons.com/3.8.95/
-font-1 = "Material Design Icons:pixelsize=14;3"
+font-1 = Material Design Icons:size=14;3
 
 background = 0
 foreground = #c5a9f9
@@ -54,13 +54,13 @@ label-urgent-foreground = #ff0000
 
 type = internal/date
 interval = 1.0
-date =   %H:%M
+date =  󱑍 %H:%M
 
 
 [module/date]
 
 type = internal/date
-date =  %e %B - %A
+date = 󰸗 %e %B - %A
 label = %date%
 
 
@@ -72,54 +72,30 @@ poll-interval = 5
 full-at = 95
 
 label-discharging = %percentage%%
-label-charging = %percentage%%
+label-charging = 󰂄 %percentage%%
 label-full = %percentage%%
 
 format-discharging = %{A3:alacritty --command ytop:} <ramp-capacity> <label-discharging> %{A}
 format-full = %{A3:alacritty --command ytop:} <ramp-capacity> <label-full> %{A}
-format-charging = %{A3:alacritty --command ytop:}  <label-charging> %{A}
+format-charging = %{A3:alacritty --command ytop:} <label-charging> %{A}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = 󰂃
+ramp-capacity-1 = 󰁻
+ramp-capacity-2 = 󰁾
+ramp-capacity-3 = 󰂀
+ramp-capacity-4 = 󰁹
 
 
 [module/pulseaudio]
 
 type = internal/pulseaudio
 format-volume = %{A3:alacritty --command pulsemixer:} <ramp-volume> <label-volume> %{A}
-label-muted = ﹨ 0%
+label-muted = 󰖁 0%
 enable-scroll = true
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-
-
-[module/mpd]
-
-type = internal/mpd
-label-offline = mpd is offline
-format-online = <icon-prev> <toggle> <icon-next> <label-song>
-format-offline = <label-offline>
-host = 127.0.0.1
-port = 6600
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-bar-progress-width = 10
-bar-progress-indicator = |
-bar-progress-fill = ─
-bar-progress-empty = ─
+ramp-volume-0 = 󰕿
+ramp-volume-1 = 󰖀
+ramp-volume-2 = 󰕾
 
 
 [module/monitorbacklight]
@@ -130,10 +106,10 @@ label = %percentage%%
 enable-scroll = true
 interval = 1
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
+ramp-0 = 󰪟
+ramp-1 = 󰪡
+ramp-2 = 󰪣
+ramp-3 = 󰪥
 
 
 [module/wlan]
@@ -149,61 +125,48 @@ format-packetloss = %{A3:alacritty --command nmtui:} 浪 %{A}
 label-connected = %essid%
 label-disconnected = Not Connected
 
-ramp-signal-0 = 冷
-ramp-signal-1 = 爛
-ramp-signal-2 = 嵐
-ramp-signal-3 = 襤
-ramp-signal-4 = 蠟
+ramp-signal-0 = 󰤫
+ramp-signal-1 = 󰤟
+ramp-signal-2 = 󰤢
+ramp-signal-3 = 󰤥
+ramp-signal-4 = 󰤨
 
 
 [module/cpu]
 
 type = internal/cpu
 format = %{A3:alacritty --command gtop:} <label> %{A}
-label =  %percentage%%
+label = 󰘚 %percentage%%
 
 
 [module/memory]
 
 type = internal/memory
 format = %{A3:alacritty --command gtop:} <label> %{A}
-label =  %gb_used%
+label = 󰍛 %gb_used%
 
 
 [module/network]
 
 type = internal/network
 interface = wlp3s0
-label-connected =  %downspeed% |  %upspeed%
+label-connected = 󰁋 %downspeed% | 󰁣 %upspeed%
 
 [module/xwindow]
 
 type = internal/xwindow
+label = 󰘔 %title%
 
 [module/temperature]
 
 type = internal/temperature
-
-
-[module/powermenu]
-
-type = custom/menu
-format-spacing = 1
-
-label-open = 
-label-close = 
-label-separator = |
-
-menu-0-0 = reboot
-menu-0-0-exec = systemctl reboot
-menu-0-1 = poweroff
-menu-0-1-exec = systemctl poweroff
+label = 󱃂 %temperature-c%
 
 
 [module/keyboardbacklight]
 
 type = custom/script
-format = 梁 <label>
+format = 󰌓 <label>
 label = %output%%
 interval = 1
 
