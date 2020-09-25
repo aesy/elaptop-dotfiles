@@ -53,29 +53,22 @@ install cmatrix asciiquarium
 install fish starship
 
 # Development
-install git hub gitflow-avh
-install redis postgresql postgis mariadb sqlite rabbitmq
+install git
+install postgresql
 install docker docker-compose
 install nodejs npm gradle maven
 install gradle maven
 install python python-pip python-setuptools python-virtualenv
 install python2 python2-pip python2-virtualenv
-install kotlin jdk8-openjdk openjdk8-doc openjdk8-src
+install kotlin jdk11-openjdk openjdk11-doc openjdk11-src
 install consul terraform aws-cli
-sudo systemctl enable redis.service
-sudo systemctl start redis.service
-sudo systemctl enable mariadb.service
-sudo systemctl start mariadb.service
 sudo systemctl enable postgresql.service
 sudo systemctl start postgresql.service
-sudo systemctl enable rabbitmq.service
-sudo systemctl start rabbitmq.service
-sudo rabbitmq-plugins enable rabbitmq_management
 
 # Applications
 install firefox-developer-edition
-install ghostwriter vlc thunderbird discord
-install slack-desktop skypeforlinux-stable-bin spotify
+install vlc discord
+install slack-desktop spotify
 
 # Utilities
-install speedcrunch coulr colorpicker deadd-notification-center
+install speedcrunch deadd-notification-center
