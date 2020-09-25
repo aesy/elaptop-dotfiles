@@ -1,11 +1,18 @@
 #!/bin/sh
 
+set -e
+
 update() {
-  pacman -Syu --noconfirm
+  yay -Syu --noconfirm
 }
 
 install() {
   yay -S --noconfirm --needed "$@"
+}
+
+start() {
+  sudo systemctl enable "$@"
+  sudo systemctl start "$@"
 }
 
 # Setup
@@ -13,20 +20,24 @@ timedatectl set-ntp true
 
 # System
 update
-install sudo which
+install sudo which udiskie
 
 # Maintenance
 install acpi htop gtop ytop
 
 # Environment
-install xorg-server xorg-xinit xorg-xrdb xorg-xrandr xorg-xprop xorg-xbacklight xorg-xmodmap
+install xorg-server xorg-xinit xorg-xrdb xorg-xrandr xorg-xprop xorg-xsetroot xinit-xsession xorg-xbacklight xorg-xmodmap xorg-server-xephyr
 install xf86-video-intel xf86-input-synaptics
 install dunst picom
 install bspwm sxhkd
+install polybar feh light wmname
+
+# Audio
+install pulseaudio pulseaudio-alsa pulsemixer
 
 # Fonts
-install adobe-source-code-pro-fonts noto-fonts ttf-roboto
-install otf-hasklig
+install adobe-source-code-pro-fonts noto-fonts ttf-roboto ttf-material-design-icons-git otf-hasklig
+install font-manager
 
 # Terminal
 install alacritty tmux
@@ -51,12 +62,13 @@ install cmatrix asciiquarium
 
 # Shell
 install fish starship
+install exa bat ripgrep
 
 # Development
 install git
 install postgresql
 install docker docker-compose
-install nodejs npm gradle maven
+install nodejs npm
 install gradle maven
 install python python-pip python-setuptools python-virtualenv
 install python2 python2-pip python2-virtualenv
@@ -67,8 +79,7 @@ sudo systemctl start postgresql.service
 
 # Applications
 install firefox-developer-edition
-install vlc discord
-install slack-desktop spotify
+install vlc discord slack-desktop spotify
 
 # Utilities
-install speedcrunch deadd-notification-center
+install speedcrunch deadd-notification-center scrot tldr

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 set -e
 
@@ -48,6 +48,8 @@ ln -snf "$PWD"/shell/.aliases ~/.aliases
 ln -snf "$PWD"/shell/.functions ~/.functions
 ln -snf "$PWD"/shell/.profile ~/.profile
 ln -snf "$PWD"/shell/.bashrc ~/.bashrc
+
+mkdir -p ~/.config/fish
 ln -snf "$PWD"/shell/config.fish ~/.config/fish/config.fish
 
 # starship
