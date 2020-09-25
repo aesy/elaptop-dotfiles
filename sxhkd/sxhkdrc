@@ -91,11 +91,11 @@ super + shift + {Left,Down,Up,Right}
 
 # focus the next/previous node in the current desktop
 super + {comma,period} 
-	bspc node -f {prev,next}.local
+	bspc node -f {prev,next}.local.window
 
 # focus the next/previous desktop in the current monitor
 super + shift + {comma,period} 
-	bspc desktop -f {prev,next}.local
+	bspc desktop -f {prev,next}.local.window
 
 # focus the last node/desktop
 super + {_,alt} + Tab
