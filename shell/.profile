@@ -1,10 +1,7 @@
-#_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
-#export PATH="$HOME/.cargo/bin:$PATH"
-
 export VISUAL="nano"
 export EDITOR="nano"
 export PAGER="less"
-export TERMINAL="termite"
+export TERMINAL="alacritty"
 export BROWSER="firefox-developer-edition"
 
 # pip should only run if there is a virtualenv currently activated
