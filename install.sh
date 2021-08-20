@@ -27,6 +27,7 @@ ln -snf "$PWD"/dunst/dunstrc ~/.config/dunst/dunstrc
 sudo mkdir -p /etc/lightdm
 sudo ln -snf "$PWD"/etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
 sudo ln -snf "$PWD"/etc/lightdm/lightdm-mini-greeter.conf /etc/lightdm/lightdm-mini-greeter.conf
+sudo ln -snf "$PWD"/etc/pacman.conf /etc/pacman.conf
 
 # git
 ln -snf "$PWD"/git/.gitconfig ~/.gitconfig
