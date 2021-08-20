@@ -31,6 +31,7 @@ install xf86-video-intel xf86-input-synaptics
 install dunst picom
 install bspwm sxhkd
 install polybar feh light wmname
+install lightdm lightdm-mini-greeter
 
 # Audio
 install pulseaudio pulseaudio-alsa pulsemixer

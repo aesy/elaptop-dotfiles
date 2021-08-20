@@ -30,6 +30,10 @@ super + @space
 super + alt + @space
 	rofi -show window -theme ~/.config/rofi/easy
 
+# lock screen
+super + l
+    dm-tool lock
+
 {XF86AudioLowerVolume, XF86AudioRaiseVolume}
 	amixer -D pulse set Master 5%{-,+} unmute
 

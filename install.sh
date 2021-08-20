@@ -23,6 +23,11 @@ ln -snf "$PWD"/picom/picom.conf ~/.config/picom/picom.conf
 mkdir -p ~/.config/dunst
 ln -snf "$PWD"/dunst/dunstrc ~/.config/dunst/dunstrc
 
+# etc
+sudo mkdir -p /etc/lightdm
+sudo ln -snf "$PWD"/etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
+sudo ln -snf "$PWD"/etc/lightdm/lightdm-mini-greeter.conf /etc/lightdm/lightdm-mini-greeter.conf
+
 # git
 ln -snf "$PWD"/git/.gitconfig ~/.gitconfig
 ln -snf "$PWD"/git/.gitignore ~/.gitignore
