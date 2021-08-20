@@ -82,4 +82,4 @@ install firefox-developer-edition
 install vlc discord slack-desktop spotify
 
 # Utilities
-install speedcrunch deadd-notification-center scrot tldr
+install speedcrunch deadd-notification-center flameshot tldr

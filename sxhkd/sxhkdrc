@@ -50,7 +50,7 @@ function + {Up,Down,Right,Left}
 
 # Take full screenshot
 Print
-	scrot $HOME/Pictures/Screenshots/%Y-%m-%d_%H%M%S-$wx$h_scrot.png
+	flameshot gui
 
 # make sxhkd reload its configuration files:
 super + r 
