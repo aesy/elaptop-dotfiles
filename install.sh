@@ -55,6 +55,10 @@ ln -snf "$PWD"/shell/config.fish ~/.config/fish/config.fish
 # starship
 ln -snf "$PWD"/starship/starship.toml ~/.config/starship.toml
 
+# tmux
+mkdir -p ~/.config/tmux
+ln -snf "$PWD"/tmux/tmux.conf ~/.config/tmux/tmux.conf
+
 # x11
 ln -snf "$PWD"/x11/.xinitrc ~/.xinitrc
 ln -snf "$PWD"/x11/.Xresources ~/.Xresources
