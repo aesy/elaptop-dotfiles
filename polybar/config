@@ -21,9 +21,9 @@ font-0 = Roboto:size=11;3
 ; https://cdn.materialdesignicons.com/3.8.95/
 font-1 = Material Design Icons:size=14;3
 
-background = 0
+background = #00ffffff
 foreground = #c5a9f9
-border-color = 0
+border-color = #00ffffff
 
 fixed-center = true
 padding-left = 2
