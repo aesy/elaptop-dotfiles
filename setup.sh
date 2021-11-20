@@ -37,7 +37,6 @@ install pulseaudio pulseaudio-alsa pulsemixer
 
 # Fonts
 install adobe-source-code-pro-fonts noto-fonts ttf-roboto ttf-material-design-icons-git otf-hasklig
-install font-manager
 
 # Terminal
 install alacritty tmux
