@@ -24,9 +24,6 @@ mkdir -p ~/.config/dunst
 ln -snf "$PWD"/dunst/dunstrc ~/.config/dunst/dunstrc
 
 # etc
-sudo mkdir -p /etc/lightdm
-sudo ln -snf "$PWD"/etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
-sudo ln -snf "$PWD"/etc/lightdm/lightdm-mini-greeter.conf /etc/lightdm/lightdm-mini-greeter.conf
 sudo ln -snf "$PWD"/etc/pacman.conf /etc/pacman.conf
 
 # git
