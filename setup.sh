@@ -15,6 +15,8 @@ start() {
   sudo systemctl start "$@"
 }
 
+echo "Configuring system..."
+
 # Setup
 timedatectl set-ntp true
 
@@ -48,12 +50,12 @@ install rsync openssl openssh openvpn
 
 # Network
 install whois wget curl httpie wpa_supplicant
-install networkmanager networkmanager-openvpn
+install networkmanager
 systemctl enable NetworkManager.service
 systemctl start NetworkManager.service
 
 # Archive
-install tar 7z bzip2 gzip unrar unzip zip
+install tar p7zip bzip2 gzip unrar unzip zip
 
 # Fun
 install neofetch
@@ -70,9 +72,8 @@ install docker docker-compose
 install nodejs npm
 install gradle maven
 install python python-pip python-setuptools python-virtualenv
-install python2 python2-pip python2-virtualenv
 install kotlin jdk11-openjdk openjdk11-doc openjdk11-src
-install consul terraform aws-cli
+install terraform
 sudo systemctl enable postgresql.service
 sudo systemctl start postgresql.service
 
@@ -82,3 +83,5 @@ install vlc discord slack-desktop spotify
 
 # Utilities
 install speedcrunch deadd-notification-center flameshot tldr
+
+echo "Done!"
