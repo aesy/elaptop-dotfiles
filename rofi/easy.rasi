@@ -58,150 +58,54 @@ configuration {
 }
 
 * {
-    selected-normal-foreground:  rgba ( 255, 255, 255, 100 % );
-    foreground:                  rgba ( 255, 255, 255, 100 % );
-    normal-foreground:           @foreground;
-    alternate-normal-background: transparent;
-    red:                         rgba ( 220, 50, 47, 100 % );
-    selected-urgent-foreground:  rgba ( 255, 195, 156, 100 % );
-    blue:                        rgba ( 38, 139, 210, 100 % );
-    urgent-foreground:           rgba ( 243, 132, 61, 100 % );
-    alternate-urgent-background: transparent;
-    active-foreground:           rgba ( 43, 20, 48, 100 % );
-    lightbg:                     rgba ( 238, 232, 213, 100 % );
-    selected-active-foreground:  rgba ( 32, 81, 113, 100 % );
-    alternate-active-background: transparent;
-    background:                  transparent;
-    bordercolor:                 rgba ( 57, 57, 57, 100 % );
-    alternate-normal-foreground: @foreground;
-    normal-background:           transparent;
-    lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  rgba ( 195, 73, 175, 100 % );
-    border-color:                rgba ( 195, 73, 175, 100 % );
-    separatorcolor:              transparent;
-    urgent-background:           transparent;
-    selected-urgent-background:  rgba ( 43, 20, 48, 100 % );
-    alternate-urgent-foreground: @urgent-foreground;
-    background-color:            rgba ( 0, 0, 0, 0 % );
-    alternate-active-foreground: @active-foreground;
-    active-background:           rgba ( 43, 20, 48, 100 % );
-    selected-active-background:  rgba ( 43, 20, 48, 100 % );
+    background:       #1E1E1F;
+    selected:         #2D2D2E;
+    active:           #232324;
+    background-color: transparent;
+    border-color:     #C349AF;
+    text-color:       white;
 }
 
 #window {
-    background-color: rgba ( 57, 57, 57, 95 % );
-    border:           3px ;
-    padding:          4px ;
-}
-
-#mainbox {
-    border:  0;
-    padding: 0;
-}
-
-#message {
-    border:       1px dash 0px 0px ;
-    border-color: @separatorcolor;
-    padding:      1px ;
-}
-
-#textbox {
-    text-color: @foreground;
+    background-color: @background;
+    border:           4px;
+    padding:          0;
 }
 
 #listview {
-    border-color: @separatorcolor;
-    spacing:      2px ;
+    spacing: 0;
 }
 
 #element {
-    border: 0;
-    padding: 6px 8px ;
-}
-
-#element.normal.normal {
-    background-color: @normal-background;
-    text-color:       @normal-foreground;
-}
-
-#element.normal.urgent {
-    background-color: @urgent-background;
-    text-color:       @urgent-foreground;
+    padding: 12px 18px;
 }
 
 #element.normal.active {
-    background-color: @active-background;
-    text-color:       @active-foreground;
+    background-color: @active;
 }
 
 #element.selected.normal {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
-}
-
-#element.selected.urgent {
-    background-color: @selected-urgent-background;
-    text-color:       @selected-urgent-foreground;
+    background-color: @selected;
 }
 
 #element.selected.active {
-    background-color: @selected-active-background;
-    text-color:       @selected-active-foreground;
+    background-color: @selected;
 }
 
-#element.alternate.normal {
-    background-color: @alternate-normal-background;
-    text-color:       @alternate-normal-foreground;
-}
-
-#element.alternate.urgent {
-    background-color: @alternate-urgent-background;
-    text-color:       @alternate-urgent-foreground;
-}
-
-#element.alternate.active {
-    background-color: @alternate-active-background;
-    text-color:       @alternate-active-foreground;
-}
-
-#button.selected {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
-}
-
-#button {
-    background-color: @background;
-    text-color:       @foreground;
+#element-icon {
+    margin: 2px 8px 0 0;
 }
 
 #inputbar {
-    spacing:    0;
-    text-color: @normal-foreground;
-    padding:    10px ;
-}
-
-#case-indicator {
-    spacing:    0;
-    text-color: @normal-foreground;
-}
-
-#entry {
-    spacing:    0;
-    text-color: @normal-foreground;
-}
-
-#prompt {
-    spacing:    0;
-    text-color: @normal-foreground;
+    padding: 18px;
 }
 
 #inputbar {
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    children: [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 
 #textbox-prompt-colon {
-    expand:     false;
-    str:        ":";
-    margin:     0px 0.3em 0em 0em ;
-    text-color: @normal-foreground;
+    expand: false;
+    str:    ":";
+    margin: 0 8px 0 0;
 }
