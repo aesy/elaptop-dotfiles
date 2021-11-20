@@ -89,7 +89,6 @@ alias e="ranger"
 alias f="find . -name"
 alias fdir='find . -type d -name'
 alias ffile='find . -type f -name'
-alias find="fd"
 alias h="history | grep"
 alias p="ps aux | grep"
 alias rm="rm -Iv"
