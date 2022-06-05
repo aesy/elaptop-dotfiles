@@ -35,7 +35,8 @@ install bspwm sxhkd
 install polybar feh light wmname
 
 # Audio
-install pulseaudio pulseaudio-alsa pulsemixer
+install pipewire pipewire-alsa pipewire-pulse
+install playerctl
 
 # Fonts
 install adobe-source-code-pro-fonts noto-fonts ttf-roboto ttf-material-design-icons-git otf-hasklig

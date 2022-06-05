@@ -89,7 +89,7 @@ ramp-capacity-4 = 󰁹
 [module/pulseaudio]
 
 type = internal/pulseaudio
-format-volume = %{A3:alacritty --command pulsemixer:} <ramp-volume> <label-volume> %{A}
+format-volume = %{A3:pavucontrol:} <ramp-volume> <label-volume> %{A}
 label-muted = 󰖁 0%
 enable-scroll = true
 

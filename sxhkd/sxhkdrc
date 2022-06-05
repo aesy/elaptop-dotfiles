@@ -1,5 +1,5 @@
 # terminal
-super + t 
+super + t
 	alacritty
 
 # explorer
@@ -23,7 +23,7 @@ super + i
 	intellij-idea-ultimate-edition
 
 # application launcher
-super + @space 
+super + @space
 	rofi -show drun -theme ~/.config/rofi/easy
 
 # window launcher
@@ -35,10 +35,10 @@ super + l
     dm-tool lock
 
 {XF86AudioLowerVolume, XF86AudioRaiseVolume}
-	amixer -D pulse set Master 5%{-,+} unmute
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+} 5%
 
 XF86AudioMute
-	amixer -D pulse set Master 1+ toggle
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
 	light -{A,U} 5
@@ -57,16 +57,16 @@ Print
 	flameshot gui
 
 # make sxhkd reload its configuration files:
-super + r 
+super + r
 	pkill -USR1 -x sxhkd
 	polybar-msg cmd restart
 
 # quit bspwm normally
-super + alt + Escape 
+super + alt + Escape
 	bspc quit
 
 # close and kill
-super + {_,shift + }Escape 
+super + {_,shift + }Escape
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
@@ -74,7 +74,7 @@ super + f
 	bspc desktop -l next
 
 # toggle floating
-super + ctrl + @space  
+super + ctrl + @space
 	bspc node -t '~{floating}'
 
 # toggle taskbar
@@ -82,11 +82,11 @@ super + ctrl + p
 	polybar-msg cmd toggle
 
 # set the node flags
-super + ctrl + {m,l,s,p} 
+super + ctrl + {m,l,s,p}
 	bspc node -g {marked,locked,sticky,private}
 
 # focus the node in the given direction
-super + {Left,Down,Up,Right} 
+super + {Left,Down,Up,Right}
 	bspc node -f {west,south,north,east}
 
 # swap the node with the node in the given direction
@@ -94,11 +94,11 @@ super + shift + {Left,Down,Up,Right}
 	bspc node -s {west,south,north,east}
 
 # focus the next/previous node in the current desktop
-super + {comma,period} 
+super + {comma,period}
 	bspc node -f {prev,next}.local.window
 
 # focus the next/previous desktop in the current monitor
-super + shift + {comma,period} 
+super + shift + {comma,period}
 	bspc desktop -f {prev,next}.local.window
 
 # focus the last node/desktop
@@ -106,15 +106,15 @@ super + {_,alt} + Tab
 	bspc {node,desktop} -f last
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0} 
+super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 # preselect the direction
-super + alt + {Left,Down,Up,Right} 
+super + alt + {Left,Down,Up,Right}
 	bspc node -p {west,south,north,east}
 
 # preselect the ratio
-super + shift + {1-9} 
+super + shift + {1-9}
 	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused desktop

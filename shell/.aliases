@@ -13,11 +13,6 @@ alias colorpicker="coulr"
 # weather() { curl wttr.in/$1 ;}
 
 # Audio
-alias mixer="pulsemixer"
-alias mute="pamixer -m"
-alias unmute="pamixer -u"
-alias vu="pamixer --allow-boost -i 5"
-alias vd="pamixer --allow-boost -d 5"
 alias pause="mpc toggle"
 alias next="mpc next"
 alias prev="mpc prev"
