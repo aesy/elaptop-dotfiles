@@ -1,4 +1,5 @@
 PATH=${PATH}:${HOME}/bin
+PATH=${PATH}:${HOME}/.cargo/bin
 
 xrandr --auto
 xsetroot -cursor_name left_ptr # Change background cursor from X to pointer
