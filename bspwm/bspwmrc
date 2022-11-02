@@ -1,9 +1,9 @@
 #!/bin/sh
 
-bspc monitor -d web dev music chat misc
+bspc monitor -d dev web music chat misc
 
-# bspc rule -a "Firefox Developer Edition" desktop=^1
-# bspc rule -a "jetbrains-idea" desktop=^2
+bspc rule -a "jetbrains-idea" desktop=^1
+bspc rule -a "Firefox Developer Edition" desktop=^2
 bspc rule -a "Spotify" desktop=^3
 bspc rule -a "Discord" desktop=^4
 bspc rule -a "Slack" desktop=^4
