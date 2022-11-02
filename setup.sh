@@ -25,7 +25,7 @@ update
 install sudo which udiskie
 
 # Maintenance
-install acpi htop gtop ytop
+install acpi htop gtop
 
 # Environment
 install xorg-server xorg-xinit xorg-xrdb xorg-xrandr xorg-xprop xorg-xsetroot xinit-xsession xorg-xbacklight xorg-xmodmap xorg-server-xephyr
