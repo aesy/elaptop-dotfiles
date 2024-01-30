@@ -264,7 +264,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux"
+    - "tmux -u"
 
 # Key bindings
 #
