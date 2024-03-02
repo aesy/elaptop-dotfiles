@@ -3,12 +3,11 @@
 alias nvidia-settings="optirun -b none nvidia-settings -c :8"
 
 # Generic applications
-# alias music=""
-# alias email=""
-# alias calender=""
-# alias video=""
+ alias music="spotify"
+ alias email="thunderbird"
+ alias calender="thunderbird"
+ alias video="vlc"
 alias calculator="speedcrunch"
-alias colorfetch="colorpicker"
 alias colorpicker="coulr"
 # weather() { curl wttr.in/$1 ;}
 
