@@ -34,9 +34,6 @@ modules-left = pulseaudio monitorbacklight keyboardbacklight battery cpu memory 
 modules-center = xwindow
 modules-right = wlan network date time
 
-tray-position = none
-tray-detached = true
-
 
 [module/bspwm]
 
