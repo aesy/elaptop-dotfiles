@@ -17,6 +17,7 @@ monitor = 0
 # will be ignored.
 # follow = mouse
 
+# WARNING: Setting geometry in section global doesn't exist
 # The geometry of the window:
 #   [{width}]x{height}[+/-{x}+/-{y}]
 # The geometry of the message window.
@@ -43,6 +44,7 @@ shrink = no
 # present (e.g. xcompmgr, compiz, etc.).
 transparency = 0
 
+# WARNING: Setting notification_height in section global doesn't exist
 # The height of the entire notification.  If the height is smaller
 # than the font height and padding combined, it will be raised
 # to the font height and padding.
@@ -187,6 +189,7 @@ title = Dunst
 # Define the class of the windows spawned by dunst
 class = Dunst
 
+# WARNING: Setting startup_notification in section global doesn't exist
 # Print a notification on startup.
 # This is mainly for error detection, since dbus (re-)starts dunst
 # automatically after a crash.
@@ -214,6 +217,7 @@ force_xinerama = false
 # where there are multiple screens with very different dpi values.
 per_monitor_dpi = false
 
+WARNING: Section shortcuts is deprecated.
 [shortcuts]
 
 # Shortcuts are specified as [modifier+][modifier+]...key

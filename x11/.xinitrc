@@ -13,6 +13,6 @@ sxhkd -m -1 &
 picom &
 dunst &
 deadd-notificaiton-center &
-udiskie -anT2 &
+udiskie -anT &
 
 exec bspwm

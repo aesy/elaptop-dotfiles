@@ -49,9 +49,6 @@ XF86AudioMute
 {XF86AudioPlay,XF86AudioStop,XF86AudioNext,XF86AudioPrev}
 	playerctl {play-pause,stop,next,previous}
 
-function + {Up,Down,Right,Left}
-	playerctl {play-pause,stop,next,previous}
-
 # Take full screenshot
 Print
 	flameshot gui
