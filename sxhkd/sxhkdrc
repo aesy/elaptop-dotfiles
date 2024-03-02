@@ -41,7 +41,7 @@ XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
-	light -{A,U} 5
+	xbacklight -{inc,dec} 5
 
 {XF86KbdBrightnessUp,XF86KbdBrightnessDown}
 	sudo asus-kbd-backlight {up,down}

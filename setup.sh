@@ -32,7 +32,7 @@ install xorg-server xorg-xinit xorg-xrdb xorg-xrandr xorg-xprop xorg-xsetroot xi
 install xf86-video-intel xf86-input-synaptics
 install dunst picom
 install bspwm sxhkd
-install polybar feh light wmname
+install polybar feh brightnessctl wmname
 
 # Audio
 install pipewire pipewire-alsa pipewire-pulse

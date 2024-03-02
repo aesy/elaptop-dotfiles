@@ -164,9 +164,9 @@ label = 󱃂 %temperature-c%
 
 type = custom/script
 format = 󰌓 <label>
-label = %output%%
+label = %output%
 interval = 1
 
-exec = light -Gs "sysfs/leds/asus::kbd_backlight" | xargs printf "%.0f\n" $p
-scroll-up = light -Ars "sysfs/leds/asus::kbd_backlight" 1
-scroll-down = light -Urs "sysfs/leds/asus::kbd_backlight" 1
+exec = brightnessctl -d 'asus::kbd_backlight' -m | awk -F ',' '{print $4}'
+scroll-up = brightnessctl -d 'asus::kbd_backlight' -m set +5%
+scroll-down = brightnessctl -d 'asus::kbd_backlight' -m set 5%-
