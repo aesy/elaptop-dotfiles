@@ -2,15 +2,6 @@
 
 alias nvidia-settings="optirun -b none nvidia-settings -c :8"
 
-# Generic applications
- alias music="spotify"
- alias email="thunderbird"
- alias calender="thunderbird"
- alias video="vlc"
-alias calculator="speedcrunch"
-alias colorpicker="coulr"
-# weather() { curl wttr.in/$1 ;}
-
 # Audio
 alias pause="mpc toggle"
 alias next="mpc next"
@@ -25,7 +16,6 @@ alias now="date '+DATE: %y/%m/%d%nTIME: %H:%M:%S'"
 alias epoch='date +"%s"'
 # alias battery="echo $(cat /sys/class/power_supply/BAT0/capacity)%"
 alias ping="prettyping"
-alias diff="colordiff"
 alias myip="curl http://ipecho.net/plain; echo"
 alias info="neofetch"
 alias used="du -sh"

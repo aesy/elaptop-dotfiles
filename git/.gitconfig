@@ -26,6 +26,9 @@
     ff = false
 [rebase]
     autostash = true
+[rerere]
+    enable = true
+    autoapply = true
 [color "branch"]
     current = magenta reverse
     local = green bold

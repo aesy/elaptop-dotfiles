@@ -59,6 +59,9 @@ install networkmanager
 systemctl enable NetworkManager.service
 systemctl start NetworkManager.service
 
+# Bluetooth
+install bluez ersrkide-bin
+
 # Archive
 install tar p7zip bzip2 gzip unrar unzip zip
 

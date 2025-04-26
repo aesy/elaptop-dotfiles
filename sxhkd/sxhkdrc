@@ -118,6 +118,11 @@ super + shift + {1-9}
 ~Escape
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
+# rotate window layout
+super + shift + r
+#	bspc node -f @parent | bspc node -R 90
+	bspc node @parent -R 90
+
 super + ctrl + {Left,Down,Up,Right}
 	$HOME/.config/bspwm/bspwm_resize.sh {west,south,north,east}
 
