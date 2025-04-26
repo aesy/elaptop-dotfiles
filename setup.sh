@@ -27,19 +27,23 @@ install sudo which udiskie
 # Maintenance
 install acpi htop gtop
 
-# Environment
-install xorg-server xorg-xinit xorg-xrdb xorg-xrandr xorg-xprop xorg-xsetroot xinit-xsession xorg-xbacklight xorg-xmodmap xorg-server-xephyr
+# X11 Environment
+install xorg-server xorg-xinit xorg-xrdb xorg-xrandr xorg-xprop xorg-xsetroot xinit-xsession xorg-xbacklight xorg-xmodmap xorg-server-xephyr egl-x11
 install xf86-video-intel xf86-input-synaptics
 install dunst picom
 install bspwm sxhkd
 install polybar feh brightnessctl wmname
+
+# Wayland Environment
+install wayland egl-wayland hyprland
+install waybar walker-bin
 
 # Audio
 install pipewire pipewire-alsa pipewire-pulse
 install playerctl
 
 # Fonts
-install adobe-source-code-pro-fonts noto-fonts ttf-roboto ttf-material-design-icons-git otf-hasklig
+install adobe-source-code-pro-fonts noto-fonts ttf-roboto ttf-material-design-icons-git ttf-jetbrains-mono-nerd otf-hasklig otf-font-awesome
 
 # Terminal
 install alacritty tmux

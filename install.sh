@@ -7,6 +7,15 @@ PWD=$(pwd)
 
 echo "Installing symlinks for user '$USER'..."
 
+# waybar
+mkdir -p ~/.config/waybar
+ln -snf "$PWD"/waybar/config.jsonc ~/.config/waybar/config.jsonc
+ln -snf "$PWD"/waybar/style.css ~/.config/waybar/style.css
+
+# walker
+mkdir -p ~/.config/walker
+ln -snf "$PWD"/walker/config.toml ~/.config/walker/config.toml
+
 # alacritty
 mkdir -p ~/.config/alacritty
 ln -snf "$PWD"/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
@@ -61,5 +70,10 @@ ln -snf "$PWD"/tmux/tmux.conf ~/.config/tmux/tmux.conf
 # x11
 ln -snf "$PWD"/x11/.xinitrc ~/.xinitrc
 ln -snf "$PWD"/x11/.Xresources ~/.Xresources
+
+# wayland / hypr
+mkdir -p ~/.config/hypr
+ln -snf "$PWD"/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
+ln -snf "$PWD"/hypr/hyprpaper.conf ~/.config/hypr/hyprpaper.conf
 
 echo "Done!"
