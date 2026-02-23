@@ -8,10 +8,12 @@ configuration {
     terminal: "rofi-sensible-terminal";
     ssh-client: "ssh";
     ssh-command: "{terminal} -e {ssh-client} {host}";
+    parse-hosts: true;
+    parse-known-hosts: false;
     run-command: "{cmd}";
     run-list-command: "";
     run-shell-command: "{terminal} -e {cmd}";
-    window-command: "xkill -id {window}";
+    // window-command: "xkill -id {window}";
     show-icons: true;
     hide-scrollbar: true;
     sidebar-mode: false;
